@@ -1,1 +1,9 @@
 test
+adding a line >> new-file.txt
+git commit -m minor change to new-file new-file.txt
+git status
+
+
+
+
+echo adding a line
