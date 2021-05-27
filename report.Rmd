@@ -3,8 +3,8 @@ title: "Report on Gun Murders"
 author: "Rafael Irizarry"
 date: "`r format(Sys.Date())`"
 output:
-  word_document: default
   html_document: default
+  word_document: default
   pdf_document: default
 ---
 
@@ -32,10 +32,11 @@ load("rdas/murders.rda")
 
 We note the large state to state variability by generating a barplot showing the murder rate by state:
 
-```{r murder-rate-by-state, echo=FALSE}
+```{r murder-rate-by-state, echo=F}
+n <- nrow(murders)
 murders %>% mutate(abb = reorder(abb, rate)) %>%
   ggplot(aes(abb, rate)) +
   geom_bar(width = 0.5, stat = "identity", color = "black") +
   coord_flip()
 ```
-
+Here `r n` cars are compared
